@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
+
 import './sign-in.styles.scss';
 
 
@@ -34,13 +37,21 @@ const SignIn = () => {
     <span>Sign in with your email and password</span>
 
     <form onSubmit={handleSubmit}>
-      <input name='email' type='email' value={creds.email} onChange={handleChange} required/>
-      <label>Email</label>   
+      <FormInput 
+        name='email' 
+        type='email' 
+        value={creds.email} 
+        handleChange={handleChange} 
+        label="email" 
+        required/>
+        
 
-      <input name='password' type='password' value={creds.password} onChange={handleChange} required/>
-      <label>Email</label>    
+      <FormInput name='password' type='password' value={creds.password} handleChange={handleChange} label="password" required/>
+          
 
-      <input type='submit' value='Submit Form' />
+      <CustomButton type='submit' value='Submit Form'>
+        SIGN IN
+      </CustomButton>
     </form>
 
   </div>
